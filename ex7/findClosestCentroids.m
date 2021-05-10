@@ -20,12 +20,14 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
+min_squared_norm = ones(size(X,1), 1) * realmax('double');
+for i = 1:K
+    diff = X - centroids(i, :);
+    squared_norm = sum(diff.^2,2);
+    is_less = squared_norm < min_squared_norm;
+    idx(is_less) = i;
+    min_squared_norm(is_less) = squared_norm(is_less);
+end
 
 % =============================================================
 
