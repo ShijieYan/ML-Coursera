@@ -11,14 +11,10 @@ figure; hold on;
 %               2D plot, using the option 'k+' for the positive
 %               examples and 'ko' for the negative examples.
 %
-
-
-
-
-
-
-
-
+X_positive = X(y >= 0.5, :); y_positive = y(y >= 0.5);
+X_negative = X(y < 0.5, :); y_negative = y(y < 0.5);
+scatter(X_positive(:, 1), X_positive(:, 2), 'k+');
+scatter(X_negative(:, 1), X_negative(:, 2), 'yo');
 
 % =========================================================================
 
