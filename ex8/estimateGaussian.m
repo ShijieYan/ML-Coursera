@@ -20,15 +20,12 @@ sigma2 = zeros(n, 1);
 %               the data for the i-th feature and sigma2(i)
 %               should contain variance of the i-th feature.
 %
+mu = mean(X);
+X_square = X.*X;
+sigma2 = mean(X_square) - mu.^2;
 
-
-
-
-
-
-
-
-
+mu = mu';
+sigma2 = sigma2';
 
 % =============================================================
 
